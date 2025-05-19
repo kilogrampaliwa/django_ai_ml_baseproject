@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
 
 urlpatterns = [
+    path('', lambda request: HttpResponse("👋 Welcome in AI_ML_Basic project!"), name='home'),
     path('admin/', admin.site.urls),
     path('uploads/', include('uploads.urls')),
     path('analysis/', include('analysis.urls')),
